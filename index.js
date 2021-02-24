@@ -102,18 +102,31 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
-  }
+
+
+    function Baby(name, age, favoriteToy) {
+      Person.call(this, name, age);
+      this.favoriteToy = favoriteToy;
+    }
+
+    Baby.prototype = Object.create(Person.prototype);
+
+    const myFirstChild = new Baby('Maya', '2 months', 'rattle');
+
+    Baby.prototype.play = function(){
+      return `Playing with ${this.favoriteToy}`
+    }
  
   
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    
+    1. If you are using 'new'  the this keyword will bind to the new object
+    2. if using .apply .bind. call you can assume it will be the argument that goes into the new function
+    3. In a method the this keyword  is going to be whatever should go left of dot normally.
+    4. If all else fails. It will bind to the window. Bad juju that. Don't do that.
+
   */
   
   
