@@ -39,7 +39,20 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person() {
+ function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+    this.eat = function(){
+
+    }
+    this.poop = function(){
+
+    }
+    this.toString= function(){
+      return `${this.name}, ${this.age}`
+    }
+    
     
   }
  
